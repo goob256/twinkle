@@ -13,7 +13,7 @@ enum COLOR {
 };
 
 void start_color();
-void set_color(COLOR fore, bool f_bright, COLOR back);
+void set_color(COLOR fore, bool f_bright, COLOR back, bool b_bright);
 void reset_color();
 
 #endif // COLOR_H

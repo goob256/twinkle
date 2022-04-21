@@ -12,7 +12,7 @@ void start_color()
 #endif
 }
 
-void set_color(COLOR fore, bool f_bright, COLOR back)
+void set_color(COLOR fore, bool f_bright, COLOR back, bool b_bright)
 {
 #ifdef _WIN32
 	int c = (int)fore;
@@ -22,6 +22,9 @@ void set_color(COLOR fore, bool f_bright, COLOR back)
 	int b = (int)back;
 	b *= 16;
 	c += b;
+	if (b_bright) {
+		c |= BACKGROUND_INTENSITY;
+	}
 	SetConsoleTextAttribute(console, c);
 #else
 	int c[8] = {
