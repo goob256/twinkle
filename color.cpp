@@ -1,7 +1,7 @@
 #include <cstdio>
 #ifdef _WIN32
 #include <windows.h>
-static HANDLE console
+static HANDLE console;
 #endif
 #include "color.h"
 
