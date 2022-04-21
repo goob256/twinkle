@@ -14,7 +14,7 @@ void start()
 #endif
 }
 
-void set(COLOR fore, bool f_bright, COLOR back, bool b_bright)
+void set(TWINKLE_COLOR fore, bool f_bright, TWINKLE_COLOR back, bool b_bright)
 {
 #ifdef _WIN32
 	int c = (int)fore;

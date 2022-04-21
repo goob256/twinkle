@@ -2,12 +2,12 @@
 #define TWINKLE_H
 
 #ifdef TWINKLE_BRITISH
-#define COLOUR COLOR
+#define TWINKLE_COLOUR TWINKLE_COLOR
 #endif
 
 namespace twinkle {
 
-enum COLOR {
+enum TWINKLE_COLOR {
 	BLACK = 0,
 	BLUE,
 	GREEN,
@@ -19,7 +19,7 @@ enum COLOR {
 };
 
 void start();
-void set(COLOR fore, bool f_bright, COLOR back, bool b_bright);
+void set(TWINKLE_COLOR fore, bool f_bright, TWINKLE_COLOR back, bool b_bright);
 void reset();
 
 }

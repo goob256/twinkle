@@ -16,7 +16,7 @@ int main(void)
 		for (int j = 0; j < 2; j++) {
 			for (int k = 0; k < 8; k++) {
 				for (int l = 0; l < 2; l++) {
-					twinkle::set((twinkle::COLOR)i, j, (twinkle::COLOR)k, l);
+					twinkle::set((twinkle::TWINKLE_COLOR)i, j, (twinkle::TWINKLE_COLOR)k, l);
 					printf("%d%d", i, k);
 					twinkle::reset();
 				}
