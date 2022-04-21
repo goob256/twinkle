@@ -39,10 +39,17 @@ void set_color(COLOR fore, bool f_bright, COLOR back, bool b_bright)
 	};
 
 	if (f_bright) {
-		printf("\x1b[3%d;4%d;1m", c[fore], c[back]);
+		printf("\x1b[3%d;1m", c[fore]);
 	}
 	else {
-		printf("\x1b[3%d;4%dm", c[fore], c[back]);
+		printf("\x1b[3%dm", c[fore]);
+	}
+
+	if (b_bright) {
+		printf("\x1b[48;5;%dm", c[back]+8);
+	}
+	else {
+		printf("\x1b[4%dm", c[back]);
 	}
 #endif
 }
