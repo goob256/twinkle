@@ -1,24 +1,24 @@
 #include <cstdio>
-#include "color.h"
+#include "twinkle.h"
 
 int main(void)
 {
-	start_color();
+	twinkle::start();
 
-	set_color(RED, false, WHITE, true);
+	twinkle::set(twinkle::RED, false, twinkle::WHITE, true);
 	printf("OH");
-	set_color(WHITE, true, RED, false);
+	twinkle::set(twinkle::WHITE, true, twinkle::RED, false);
 	printf("CANADA");
-	reset_color();
-	printf("\n");
+	twinkle::reset();
+	printf("\n\n");
 
 	for (int i = 0; i < 8; i++) {
 		for (int j = 0; j < 2; j++) {
 			for (int k = 0; k < 8; k++) {
 				for (int l = 0; l < 2; l++) {
-					set_color((COLOR)i, j, (COLOR)k, l);
+					twinkle::set((twinkle::COLOR)i, j, (twinkle::COLOR)k, l);
 					printf("%d%d", i, k);
-					reset_color();
+					twinkle::reset();
 				}
 			}
 		}

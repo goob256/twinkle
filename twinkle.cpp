@@ -3,16 +3,18 @@
 #include <windows.h>
 static HANDLE console;
 #endif
-#include "color.h"
+#include "twinkle.h"
 
-void start_color()
+namespace twinkle {
+
+void start()
 {
 #ifdef _WIN32
 	console = GetStdHandle(STD_OUTPUT_HANDLE);
 #endif
 }
 
-void set_color(COLOR fore, bool f_bright, COLOR back, bool b_bright)
+void set(COLOR fore, bool f_bright, COLOR back, bool b_bright)
 {
 #ifdef _WIN32
 	int c = (int)fore;
@@ -54,11 +56,13 @@ void set_color(COLOR fore, bool f_bright, COLOR back, bool b_bright)
 #endif
 }
 
-void reset_color()
+void reset()
 {
 #ifdef _WIN32
 	SetConsoleTextAttribute(console, WHITE);
 #else
 	printf("\x1b[0m");
 #endif
+}
+
 }
