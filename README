@@ -1,1 +1,1 @@
-This sets the output color for printf/etc. See test.cpp for usage.
+This sets the output color for printf/etc. See example.cpp for usage.
