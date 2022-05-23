@@ -1,7 +1,10 @@
 #include <cstdio>
 #ifdef _WIN32
 #include <windows.h>
+#include <conio.h>
 static HANDLE console;
+#else
+#include <termios.h>
 #endif
 #include "twinkle.h"
 
@@ -62,6 +65,23 @@ void reset()
 	SetConsoleTextAttribute(console, WHITE);
 #else
 	printf("\x1b[0m");
+#endif
+}
+
+int getch()
+{
+#ifdef _WIN32
+	return ::getch();
+#else
+	struct termios old, current;
+	tcgetattr(0, &old);
+	current = old;
+	current.c_lflag &= ~ICANON;
+	current.c_lflag &= ~ECHO;
+	tcsetattr(0, TCSANOW, &current);
+	int c = getchar();
+	tcsetattr(0, TCSANOW, &old);
+	return c;
 #endif
 }
 

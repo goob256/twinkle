@@ -22,6 +22,8 @@ void start();
 void set(TWINKLE_COLOR fore, bool f_bright, TWINKLE_COLOR back, bool b_bright);
 void reset();
 
+int getch();
+
 }
 
 #endif // TWINKLE_H

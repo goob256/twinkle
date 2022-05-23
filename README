@@ -1,1 +1,6 @@
+<<<<<<< HEAD
 This sets the output color for printf/etc. See example.cpp for usage.
+=======
+This has some stuff for making console apps on Windows/Linux. Such as setting
+text colour and getch functions that are portable.
+>>>>>>> dd3c02e (Add getch input function)

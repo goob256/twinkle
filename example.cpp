@@ -1,4 +1,5 @@
 #include <cstdio>
+#include <cctype>
 #include "twinkle.h"
 
 int main(void)
@@ -26,6 +27,22 @@ int main(void)
 	}
 
 	printf("\n");
+
+	printf("Yes or No? ");
+	fflush(stdout);
+	int c = twinkle::getch();
+	c = toupper(c);
+	printf("%c\n", c);
+
+	if (c == 'Y') {
+		printf("Right away...\n");
+	}
+	else if (c == 'N') {
+		printf("Why not?\n");
+	}
+	else {
+		printf("Huh?\n");
+	}
 
 	return 0;
 }
